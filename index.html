@@ -1,0 +1,166 @@
+<!-- Name: Koushik Rama -->
+<!-- G#: G01508456 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koushik Rama - Portfolio</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap');
+
+    body {
+      margin: 0;
+      background-color: #121212;
+      color: white;
+      font-family: 'Quicksand', sans-serif;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 25px;
+      max-width: 75vw;
+      margin: auto;
+    }
+    .top{
+      padding: 0px 50px;
+      font-size: 25px;
+      font-family: 'Poppins', sans-serif;
+    }
+    .mid{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 50px;
+      max-width: 1100px;
+    }
+    .left {
+      flex: 1;
+      width:580px;
+      margin: auto;
+    }
+    .l1{
+      display: flex;
+      flex-direction: row;
+      max-width: fit-content;
+    }
+    .bulb{
+      width: 180px;
+      height: 180px;       
+    }
+    .left h1 {
+      margin-top:0 10px 0px 0;
+      font-size: 45px;
+      width: 400px;
+      font-weight: 500;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .subtitle {
+      color: #9C96FF;
+      font-weight: 600;
+      font-size: 22px;
+    }
+
+    .description {
+      margin-top: 20px;
+      line-height: 1.6;
+      max-width: 500px;
+      font-size: 23px;
+      color: #e0e0e0;
+    }
+
+    .icons {
+      margin-top: 30px;
+      margin-left:30px;
+    }
+
+    #rba {
+      width: 220px;
+      height: 200px;
+      max-width: fit-content;
+    }
+    #arrow {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 100px;
+      margin-left: 30px;
+      max-width: fit-content;
+ 
+    }
+    #Cslink{
+      width: 100px;
+      height: 100px;
+      animation: zoomIn 1s ease-in-out infinite alternate;
+    }
+
+    @keyframes zoomIn {
+        from {
+            transform: scale(1);
+        }
+        to {
+            transform: scale(1.1);
+        }
+        }
+
+    .right img {
+      width: 455px;
+      height: 474px;
+      object-fit: cover;
+      position: relative;
+      top: 50px;
+      right: 100px;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .right {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Section -->
+        <div class="top">
+            <p>Koushik Rama</p>
+        </div>
+        <div class="mid">
+            <!-- Left Section -->
+            <div class="left">
+            <div class="l1">
+                <div class="l11">
+                    <h1>Hi, I’m Koushik</h1>
+                    <div class="subtitle">Graduate Student</div>
+                </div>
+                <div class="l12">
+                    <img class='bulb' src="pictures/bulb.png" alt="bulb">
+                </div>
+            </div>
+
+            <p class="description">
+                I’m a Front-End Enthusiast and Computer Science Graduate Student at George Mason University, passionate about building elegant, user-focused web experiences
+            </p>
+            <div class="icons">
+                <img src="pictures/rba.png" id="rba" />
+                <img src="pictures/Arrow.png" id="arrow" />
+                <a href="https://swe642-krama.s3.us-east-2.amazonaws.com/HW2/cs_department.html"><img src="pictures/CSDepLink.png" id="Cslink" /></a>  
+            </div>
+            </div>
+
+            <!-- Right Section -->
+            <div class="right">
+            <img class='profile' src="pictures/profilepic.png" alt="Koushik Profile">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

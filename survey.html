@@ -1,0 +1,224 @@
+<!-- Name: Koushik Rama -->
+<!-- G#: G01508456 -->
+
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Prospective Student Survey</title>
+  <link rel="stylesheet" href="CSstyles.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="cookie.js"></script>
+  <script src="AjaxZip.js"></script>
+  <script src="formValidation.js"></script>
+  <script src="AvgnMax.js"></script>
+</head>
+<body>
+  <div class="my-container">
+    <div class="header-box">
+      <img src="pictures/CSLogo.png" id="CSLogo"/>
+      <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:  #004522;" id="menu">
+        <div class="container-fluid" id="MenuEle">
+            <!-- Nav bar with links to other pages -->
+            <ul class="navbar-nav" >
+              <li class="nav-item">
+                <a class="nav-link" href="https://swe642-krama.s3.us-east-2.amazonaws.com/HW2/index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="https://swe642-krama.s3.us-east-2.amazonaws.com/HW2/cs_department.html">CSDepartment</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="https://swe642-krama.s3.us-east-2.amazonaws.com/HW2/survey.html">Survey</a>
+              </li>
+            </ul>
+        </div>
+      </nav>
+    </div>
+
+    <section>
+        <!-- Greeting -->
+        <div id="greeting" class="greeting mb-3"></div>
+        <p class="Thank">Thank you for visiting the Computer Science Department. We hope you enjoyed your experience on campus. If you are a prospective student, please take a few moments to complete our survey. Your feedback is valuable and helps us improve our programs and campus experience.</p>
+        <h1>Prospective Student Survey</h1>
+        <p>Please provide your feedback about your campus visit.</p>
+
+        <!-- Survey form -->
+        <form id="surveyForm" autocomplete="on">
+          <!-- Name and Contact -->
+          <div class="row mb-1" id="row">
+            <div class="col-md-5 mb-1">
+              <label for="fullname" class="form-label required">Full Name</label>
+              <input type="text" class="form-control" id="fullname" name="fullname" placeholder="Koushik Rama" required autofocus>
+
+              <label for="phone" class="form-label">Telephone</label>
+              <input type="tel" class="form-control" id="phone" name="phone" placeholder="123-456-7890">
+            </div>
+
+            <div class="col-sm-7 mb-1">
+              <label for="email" class="form-label required">Email</label>
+              <input type="email" class="form-control" id="email" name="email" placeholder="name@example.edu" required>
+
+              <label for="url" class="form-label">URL</label>
+              <input type="url" class="form-control" id="url" name="url" placeholder="https://example.com">
+            </div>
+          </div>
+
+          <!-- Address -->
+          <div class="mb-1">
+            <label for="street" class="form-label required">Street Address</label>
+            <input type="text" class="form-control" id="street" name="street" placeholder="123 Main St" required>
+          </div>
+
+          <div class="row mb-1" id="row">
+            <div class="col-md-3 mb-1">
+              <label for="zip" class="form-label">Zip</label>
+              <input type="text" class="form-control" id="zip" name="zip" placeholder="22030" onblur="validateZip(this.value)">
+              <span id="validateZip" style="color:red"></span><br/>
+            </div>
+            <div class="col-md-6 mb-1">
+              <label class="form-label required">City</label>
+              <div id="city" class="form-control bg-light">Select Zip</div>
+            </div>
+            <div class="col-md-3 mb-1">
+              <label class="form-label required">State</label>
+              <span id="state" class="form-control bg-light" placeholder="VA">Select Zip</span>
+            </div>
+          </div>
+
+          <!-- Date of Survey -->
+          <div class="mb-1">
+            <label for="visitDate" class="form-label required">Date of Survey</label>
+            <input type="date" class="form-control w-25" id="visitDate" name="visitDate" required>
+          </div>
+
+          <!-- Checkboxes -->
+          <div class="mb-1">
+            <p class="form-legend">What did you like most about the campus?</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="liked" value="students" id="liked1">
+              <label class="form-check-label" for="liked1">Students</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="liked" value="location" id="liked2">
+              <label class="form-check-label" for="liked2">Location</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="liked" value="campus" id="liked3">
+              <label class="form-check-label" for="liked3">Campus</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="liked" value="atmosphere" id="liked4">
+              <label class="form-check-label" for="liked4">Atmosphere</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="liked" value="dorms" id="liked5">
+              <label class="form-check-label" for="liked5">Dorm Rooms</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" name="liked" value="sports" id="liked6">
+              <label class="form-check-label" for="liked6">Sports</label>
+            </div>
+          </div>
+
+          <!-- Radio Buttons -->
+          <div class="mb-1">
+            <p class="form-legend">How did you become interested in the university?</p>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="interest" value="friends" id="interest1">
+              <label class="form-check-label" for="interest1">Friends</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="interest" value="television" id="interest2">
+              <label class="form-check-label" for="interest2">Television</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="interest" value="internet" id="interest3">
+              <label class="form-check-label" for="interest3">Internet</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="interest" value="other" id="interest4">
+              <label class="form-check-label" for="interest4">Other</label>
+            </div>
+          </div>
+
+          <!-- Datalist + Graduation Year -->
+          <div class="row mb-1" id="row">
+            <div class="col-md-4 mb-1">
+              <label for="month" class="form-label">High-School Graduation Month</label>
+              <input list="months" class="form-control" id="month" name="month" placeholder="January">
+              <datalist id="months">
+                <option value="January"></option>
+                <option value="February"></option>
+                <option value="March"></option>
+                <option value="April"></option>
+                <option value="May"></option>
+                <option value="June"></option>
+                <option value="July"></option>
+                <option value="August"></option>
+                <option value="September"></option>
+                <option value="October"></option>
+                <option value="November"></option>
+                <option value="December"></option>
+              </datalist>
+            </div>
+            <div class="col-md-2 mb-1">
+              <label for="year" class="form-label">Year</label>
+              <input type="number" class="form-control" id="year" name="year" placeholder="2019" min="1900" max="2099">
+            </div>
+          </div>
+
+          <!-- Recommend -->
+          <div class="mb-1">
+            <label for="recommend" class="form-label required">Likelihood to recommend our University</label>
+            <select id="recommend" name="recommend" class="form-select" required>
+              <option value="">-- choose --</option>
+              <option value="very-likely">Very Likely</option>
+              <option value="likely">Likely</option>
+              <option value="unlikely">Unlikely</option>
+            </select>
+          </div>
+
+          <!-- Comments -->
+          <div class="mb-3">
+            <label for="comments" class="form-label">Additional Comments</label>
+            <textarea id="comments" name="comments" rows="4" class="form-control" placeholder="Would you like to share anything more.."></textarea>
+          </div>
+          
+          <!-- Data Field -->
+          <div class="mb-3">
+            <label for="dataField" class="form-label required">Data (10 numbers, 1-100, comma separated)</label>
+            <input type="text" class="form-control" id="dataField" placeholder="e.g. 10,20,30,40,50,60,70,80,90,100" required>
+          </div>
+
+          <!-- Average and Maximum Output Fields -->
+          <div class="mb-3 row">
+            <div class="col-md-6">
+              <label for="average" class="form-label">Average</label>
+              <input type="text" class="form-control" id="average" placeholder="click here after adding numbers" readonly>
+            </div>
+            <div class="col-md-6">
+              <label for="maximum" class="form-label">Maximum</label>
+              <input type="text" class="form-control" id="maximum" placeholder="click here after adding numbers" readonly>
+            </div>
+          </div>
+
+          <!-- Buttons -->
+          <div class="d-flex gap-3 flex-wrap">
+            <button type="submit" class="btn submit-btn">Submit</button>
+            <button type="reset" class="btn reset-btn">Reset</button>
+          </div>
+        </form>
+    </section>
+
+    <footer>
+      <p>Computer Science Department • George Mason University</p>
+    </footer>
+  </div>
+
+</body>
+</html>
